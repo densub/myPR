@@ -1,0 +1,13 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "personal_records",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "userId", "order": "ASCENDING" },
+        { "fieldPath": "exerciseId", "order": "ASCENDING" },
+        { "fieldPath": "timestamp", "order": "DESCENDING" }
+      ]
+    }
+  ]
+} 

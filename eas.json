@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 14.4.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "denish.subedi@gmail.com"
+      }
+    }
+  }
+}
+
