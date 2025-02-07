@@ -11,17 +11,15 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.denishthetics.mypr",
-      "googleServicesFile": "./ios/GoogleService-Info.plist",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "googleServicesFile": "./ios/GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.denishthetics.mypr"
+      "package": "com.denishthetics.mypr",
+      "googleServicesFile": "./android/google-services.json"
     },
     "web": {
       "bundler": "metro",

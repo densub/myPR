@@ -1,9 +1,8 @@
 {
   "cli": {
     "version": ">= 14.4.1",
-    "appVersionSource": "remote",
-     "buildHooks": "./scripts/setup-secrets.sh"
-
+    "appVersionSource": "remote"
+    
   },
   "build": {
     "development": {
@@ -21,6 +20,7 @@
     },
     "production": {
       "autoIncrement": true,
+      "environment": "production",
       "env": {
         "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
       }

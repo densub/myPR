@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "600245513537",
+    "project_id": "instagram-clone-41f56",
+    "storage_bucket": "instagram-clone-41f56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600245513537:android:98f5c23ebe6385ee6005c0",
+        "android_client_info": {
+          "package_name": "com.denishthetics.mypr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600245513537-dsdsh6b54njaq2sutcufntq47crgl8gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw5CxzUMAg8t5TmN3VebZg8fcpjxjRhFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600245513537-dsdsh6b54njaq2sutcufntq47crgl8gr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600245513537-aggc4h7u3n4u597rqhkfq3s7r99s19j2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.denishthetics.mypr"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
