@@ -7,29 +7,33 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal",
+      "distribution": "store",
       "env": {
-        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO",
+        "USE_MODULAR_HEADERS": "1"
       }
     },
     "preview": {
-      "distribution": "internal",
+      "distribution": "store",
       "env": {
-        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO",
+        "USE_MODULAR_HEADERS": "1"
       }
     },
     "production": {
       "autoIncrement": true,
       "environment": "production",
+      "distribution": "store",
       "env": {
-        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO"
+        "GOOGLE_SERVICE_INFO": "@env:GOOGLE_SERVICE_INFO",
+        "USE_MODULAR_HEADERS": "1"
       }
     }
   },
   "submit": {
     "production": {
       "ios": {
-        "appleId": "denish.subedi@gmail.com"
+        "appleId": "denish.subedi@icloud.com"
       }
     }
   }

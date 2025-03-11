@@ -85,45 +85,52 @@ export default function MyPRs() {
           <Text style={styles.noPRsText}>No PRs found</Text>
         </View>
         ) : (
-        prs.map((pr) => (
-          <View key={pr.id} style={styles.prCard}>
-            <TouchableOpacity
-              style={styles.prContent}
-              onPress={() => {
-                setSelectedPR(pr);
-                setShowHistoryModal(true);
-              }}
-            >
-              <View style={styles.prHeader}>
-                <Text style={styles.exerciseName}>{pr.exerciseName}</Text>
-                <Ionicons name="chevron-forward" size={24} color="#1E1E1E" />
+          prs.map((pr) => {
+            // Find the record with the max weight
+            const maxWeightRecord = pr.records.reduce((max, record) =>
+              record.weight > max.weight ? record : max, pr.records[0]
+            );
+        
+            return (
+              <View key={pr.id} style={styles.prCard}>
+                <TouchableOpacity
+                  style={styles.prContent}
+                  onPress={() => {
+                    setSelectedPR(pr);
+                    setShowHistoryModal(true);
+                  }}
+                >
+                  <View style={styles.prHeader}>
+                    <Text style={styles.exerciseName}>{pr.exerciseName}</Text>
+                    <Ionicons name="chevron-forward" size={24} color="#1E1E1E" />
+                  </View>
+                  <View style={styles.statsRow}>
+                    <View style={styles.statItem}>
+                      <Text style={styles.statLabel}>Weight</Text>
+                      <Text style={styles.statValue}>{maxWeightRecord.weight} lbs</Text>
+                    </View>
+                    <View style={styles.statItem}>
+                      <Text style={styles.statLabel}>Reps</Text>
+                      <Text style={styles.statValue}>{maxWeightRecord.repetitions}</Text>
+                    </View>
+                    <View style={styles.statItem}>
+                      <Text style={styles.statLabel}>Date</Text>
+                      <Text style={styles.statValue}>
+                        {new Date(maxWeightRecord.timestamp as number).toLocaleDateString()}
+                      </Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.deleteButton}
+                  onPress={() => handleDeletePR(pr)}
+                >
+                  <Ionicons name="trash-outline" size={20} color="#FF4444" />
+                </TouchableOpacity>
               </View>
-              <View style={styles.statsRow}>
-                <View style={styles.statItem}>
-                  <Text style={styles.statLabel}>Weight</Text>
-                  <Text style={styles.statValue}>{pr.records[0].weight} lbs</Text>
-                </View>
-                <View style={styles.statItem}>
-                  <Text style={styles.statLabel}>Reps</Text>
-                  <Text style={styles.statValue}>{pr.records[0].repetitions}</Text>
-                </View>
-                <View style={styles.statItem}>
-                  <Text style={styles.statLabel}>Date</Text>
-                  <Text style={styles.statValue}>
-                    {new Date(pr.records[0].timestamp as number).toLocaleDateString()}
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.deleteButton}
-              onPress={() => handleDeletePR(pr)}
-            >
-              <Ionicons name="trash-outline" size={20} color="#FF4444" />
-            </TouchableOpacity>
-          </View>
-        ))
-      )}
+            );
+          })
+        )}
       </ScrollView>
 
       {selectedPR && (

@@ -153,7 +153,9 @@ export function ExercisePicker({
                   style={styles.addButton}
                   onPress={handleAddNewExercise}
                 >
-                  <Text>Add "{searchText}" as new exercise</Text>
+                  <View style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>Add "{searchText}" as new exercise</Text>
+                  </View>
                 </TouchableOpacity>
               ) : null}
             </ScrollView>
@@ -232,5 +234,17 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: 16,
     color: '#666',
+  },
+  buttonContainer: {
+    backgroundColor: '#4CAF50',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    width: '100%',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
 }); 
